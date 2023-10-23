@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-package com.bigcorp.app.servlet;
+package com.bigcorp.app.correction.servlet;
 
 
 import java.io.IOException;
