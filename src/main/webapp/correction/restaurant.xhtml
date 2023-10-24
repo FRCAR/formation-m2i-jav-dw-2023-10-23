@@ -22,13 +22,19 @@
 			<label for="id">Id :</label> <br />
 			<h:inputText id="id" type="text"
 				value="#{restaurantFaceBean.restaurantFormBean.id}"
-				required="required" title="id" />
+				required="true" title="id" />
 		</p>
 		<p>
 			<label for="name">Name :</label> <br />
 			<h:inputText id="name" type="text"
 				value="#{restaurantFaceBean.restaurantFormBean.name}"
-				required="required" />
+				required="true" />
+		</p>
+		<p>
+			<label for="address">Address :</label> <br />
+			<h:inputText id="address" type="text"
+				value="#{restaurantFaceBean.restaurantFormBean.address}"
+				required="true" />
 		</p>
 		<p>
 			<h:commandButton value="Sauvegarder"
