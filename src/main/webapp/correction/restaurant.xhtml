@@ -18,6 +18,7 @@
 <h:body>
 	Page d'un restaurant.
 	<h:form prependId="false">
+		<h:messages />
 		<p>
 			<label for="id">Id :</label> <br />
 			<h:inputText id="id" type="text"
@@ -39,6 +40,9 @@
 		<p>
 			<h:commandButton value="Sauvegarder"
 				action="#{restaurantFaceBean.save}" />
+			<h:commandButton value="Retour"
+				action="#{restaurantFaceBean.returnToRestaurants}" 
+				immediate="true" />
 		</p>
 	</h:form>
 </h:body>

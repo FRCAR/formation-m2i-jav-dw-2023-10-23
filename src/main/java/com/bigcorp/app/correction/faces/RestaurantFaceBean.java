@@ -2,7 +2,10 @@ package com.bigcorp.app.correction.faces;
 
 import java.io.Serializable;
 
+import com.bigcorp.app.correction.service.RestaurantService;
+
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named
@@ -13,6 +16,9 @@ public class RestaurantFaceBean implements Serializable {
 
 	private String message = "Bienvenue au restaurant";
 	private Long loadId;
+	
+	@Inject
+	private RestaurantService restaurantService;
 
 	private RestaurantFormBean restaurantFormBean = new RestaurantFormBean();
 
@@ -31,6 +37,8 @@ public class RestaurantFaceBean implements Serializable {
 
 	public void onLoad() {
 		System.out.println("Je charge le restaurant avec l'id : " + this.loadId);
+		System.out.println("J'ai une instance de restaurantService : " + this.restaurantService);
+		System.out.println("restaurantService est liée à : " + this.restaurantService.getRestaurantDao().getMessage());
 		this.restaurantFormBean.setId(this.loadId);
 		this.restaurantFormBean.setName("le restaurant avec l'id : " + this.loadId);
 	}
@@ -54,6 +62,10 @@ public class RestaurantFaceBean implements Serializable {
 	public String save() {
 		System.out.println("Je sauvegarde le restaurantFormBean : " + this.restaurantFormBean);
 		return "restaurant?faces-redirect=true&id=" + this.restaurantFormBean.getId();
+	}
+	
+	public String returnToRestaurants() {
+		return "restaurants";
 	}
 
 }
