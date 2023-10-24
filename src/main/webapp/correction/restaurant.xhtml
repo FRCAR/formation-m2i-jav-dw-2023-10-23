@@ -5,7 +5,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:jsf="http://xmlns.jcp.org/jsf">
-	
+
 <f:metadata>
 	<f:viewParam name="id" value="#{restaurantFaceBean.loadId}" />
 	<f:viewAction action="#{restaurantFaceBean.onLoad}" />
@@ -17,6 +17,23 @@
 
 <h:body>
 	Page d'un restaurant.
-	Le restaurant a l'id : #{restaurantFaceBean.loadId}
+	<h:form prependId="false">
+		<p>
+			<label for="id">Id :</label> <br />
+			<h:inputText id="id" type="text"
+				value="#{restaurantFaceBean.restaurantFormBean.id}"
+				required="required" title="id" />
+		</p>
+		<p>
+			<label for="name">Name :</label> <br />
+			<h:inputText id="name" type="text"
+				value="#{restaurantFaceBean.restaurantFormBean.name}"
+				required="required" />
+		</p>
+		<p>
+			<h:commandButton value="Sauvegarder"
+				action="#{restaurantFaceBean.save}" />
+		</p>
+	</h:form>
 </h:body>
 </html>
