@@ -1,4 +1,4 @@
-package com.bigcorp.app.correction.servlet;
+package com.bigcorp.app.correction.faces;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -13,7 +13,7 @@ public class MonPremierFormBean implements Serializable {
 	private String maValeur;
 
 	public MonPremierFormBean() {
-		System.out.println("Je suis MonPremierFaceBean, et j'ai été instancié");
+		System.out.println("Je suis MonPremierFormBean, et j'ai été instancié");
 		this.maValeur = "Salut, on est le  : " + LocalDateTime.now(); 
 	}
 
