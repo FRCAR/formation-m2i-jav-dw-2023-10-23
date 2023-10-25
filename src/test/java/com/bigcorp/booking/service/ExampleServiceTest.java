@@ -19,6 +19,7 @@ public class ExampleServiceTest extends TestCase {
 
     @Test
     public void test() throws Exception {
+    	
         Example example = new Example();
         example = this.exampleService.save(example);
         Assert.assertNotNull(example.getId());

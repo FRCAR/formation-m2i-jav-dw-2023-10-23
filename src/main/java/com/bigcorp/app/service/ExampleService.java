@@ -27,5 +27,9 @@ public class ExampleService {
 	public Example findById(Long id) {
 		return this.exampleDao.findById(id);
 	}
+	
+	public int sum(int a, int b) {
+		return a - b;
+	}
 
 }

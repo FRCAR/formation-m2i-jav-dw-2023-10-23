@@ -4,20 +4,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+
+/*requete avec GenerationType.SEQUENCE :
+
+
+INSERT INTO EXAMPLE( NAME) VALUES (example.getName());
+requete 1 : 
+SELECT SEQ_EXAMPLE.NEXTVAL() FROM DUAL;
+stocke le résultat dans une variable prochainId
+requete 2
+INSERT INTO EXAMPLE(ID, NAME) VALUES (prochainId, example.getName());
+
+
+requete avec GenerationType.IDENTITY : 
+INSERT INTO EXAMPLE( NAME) VALUES (example.getName());*/
 
 @Entity
-@Table(name = "EXAMPLE")
 public class Example {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
-	@Email
 	private String nom;
 	
 	public Long getId() {

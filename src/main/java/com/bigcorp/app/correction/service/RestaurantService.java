@@ -1,5 +1,7 @@
 package com.bigcorp.app.correction.service;
 
+import com.bigcorp.app.correction.dao.RestaurantDao;
+
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
@@ -7,18 +9,14 @@ import jakarta.inject.Inject;
 public class RestaurantService {
 
 	@Inject
-	private RestaurantService restaurantDao;
-
-	public RestaurantService getRestaurantDao() {
-		return restaurantDao;
-	}
-
-	public void setRestaurantDao(RestaurantService restaurantDao) {
-		this.restaurantDao = restaurantDao;
-	}
+	private RestaurantDao restaurantDao;
 
 	public String getMessage() {
 		return "Message de restaurantDao";
+	}
+
+	public RestaurantDao getRestaurantDao() {
+		return restaurantDao;
 	}
 
 }
