@@ -9,6 +9,7 @@ import org.apache.openejb.testing.Classes;
 import org.apache.openejb.testing.Configuration;
 
 import com.bigcorp.app.correction.dao.RestaurantDao;
+import com.bigcorp.app.correction.dao.RestaurantTypeDao;
 import com.bigcorp.app.correction.service.RestaurantService;
 import com.bigcorp.app.dao.ExampleDao;
 import com.bigcorp.app.service.ExampleService;
@@ -34,7 +35,8 @@ public class TestWebApp {
 	@org.apache.openejb.testing.Module
 	@Classes(cdi = true, value = { 
 			ExampleService.class, ExampleDao.class,
-			RestaurantService.class, RestaurantDao.class
+			RestaurantService.class, RestaurantDao.class,
+			RestaurantTypeDao.class
 			})
 	public WebApp app() {
 		return new WebApp();
@@ -46,6 +48,7 @@ public class TestWebApp {
 		p.put("bookingTestDatabase", "new://Resource?type=DataSource");
 		p.put("bookingTestDatabase.JdbcDriver", "org.h2.Driver");
 		p.put("bookingTestDatabase.JdbcUrl", "jdbc:h2:file:~/h2-data/formation-test");
+		
 		return p;
 	}
 

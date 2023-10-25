@@ -21,7 +21,8 @@ public class ExampleDao {
 	}
 
 	public void remove(Long id) {
-		this.entityManager.createQuery("delete from Example e where e.id = :id", Example.class).setParameter("id", id)
+		this.entityManager.createQuery("delete from Example e where e.id = :id", Example.class)
+		.setParameter("id", id)
 				.executeUpdate();
 	}
 

@@ -28,8 +28,14 @@ public class ExampleService {
 		return this.exampleDao.findById(id);
 	}
 	
+	/**
+	 * Méthode bidon destinée à être testée via JUnit
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	public int sum(int a, int b) {
-		return a - b;
+		return a + b;
 	}
 
 }

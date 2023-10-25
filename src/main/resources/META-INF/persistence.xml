@@ -24,8 +24,8 @@
 				
 			<!--property name="javax.persistence.schema-generation.create-source" 
 				value="metadata-then-script" / -->
-			<property name="hibernate.Log"
-				value="DefaultLevel=WARN,Runtime=INFO,Tool=INFO,SQL=TRACE" />
+			<!--property name="hibernate.Log"
+				value="DefaultLevel=WARN,Runtime=INFO,Tool=INFO,SQL=TRACE" /-->
 			
 		</properties>
 	</persistence-unit>

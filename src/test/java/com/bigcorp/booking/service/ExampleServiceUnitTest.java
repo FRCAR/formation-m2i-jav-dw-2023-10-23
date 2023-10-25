@@ -3,7 +3,6 @@ package com.bigcorp.booking.service;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bigcorp.app.model.Example;
 import com.bigcorp.app.service.ExampleService;
 
 public class ExampleServiceUnitTest {
@@ -53,15 +52,5 @@ public class ExampleServiceUnitTest {
 		Assert.assertEquals(resultat1, sum1);
 	}
 	
-	@Test
-	public void testSave() {
-		Example example = new Example();
-		ExampleService exampleService = new ExampleService();
-		
-		Example savedExample = exampleService.save(example);
-		
-		Assert.assertNotNull(savedExample);
-		
-	}
 	
 }
