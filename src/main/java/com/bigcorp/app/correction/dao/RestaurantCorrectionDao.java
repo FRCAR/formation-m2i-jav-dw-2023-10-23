@@ -10,7 +10,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
 @Stateless
-public class RestaurantDao {
+public class RestaurantCorrectionDao {
 
 	@PersistenceContext
 	protected EntityManager entityManager;

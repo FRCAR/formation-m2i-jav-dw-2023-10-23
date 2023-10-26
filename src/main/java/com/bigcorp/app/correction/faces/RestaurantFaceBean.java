@@ -2,7 +2,7 @@ package com.bigcorp.app.correction.faces;
 
 import java.io.Serializable;
 
-import com.bigcorp.app.correction.service.RestaurantService;
+import com.bigcorp.app.correction.service.RestaurantCorrectionService;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
@@ -18,7 +18,7 @@ public class RestaurantFaceBean implements Serializable {
 	private Long loadId;
 	
 	@Inject
-	private RestaurantService restaurantService;
+	private RestaurantCorrectionService restaurantService;
 
 	private RestaurantFormBean restaurantFormBean = new RestaurantFormBean();
 

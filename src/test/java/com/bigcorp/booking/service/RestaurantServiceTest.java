@@ -4,7 +4,7 @@ import org.apache.openejb.testing.SingleApplicationComposerRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.bigcorp.app.correction.service.RestaurantService;
+import com.bigcorp.app.correction.service.RestaurantCorrectionService;
 
 import jakarta.inject.Inject;
 import junit.framework.TestCase;
@@ -13,7 +13,7 @@ import junit.framework.TestCase;
 public class RestaurantServiceTest extends TestCase {
 
 	@Inject
-	private RestaurantService restaurantService;
+	private RestaurantCorrectionService restaurantService;
 
     @Test
     public void test() throws Exception {

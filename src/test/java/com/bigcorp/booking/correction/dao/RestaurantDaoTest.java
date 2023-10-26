@@ -8,8 +8,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.bigcorp.app.correction.dao.RestaurantDao;
-import com.bigcorp.app.correction.dao.RestaurantTypeDao;
+import com.bigcorp.app.correction.dao.RestaurantCorrectionDao;
+import com.bigcorp.app.correction.dao.RestaurantTypeCorrectionDao;
 import com.bigcorp.app.correction.model.Restaurant;
 import com.bigcorp.app.correction.model.RestaurantType;
 import com.bigcorp.app.correction.model.TypePrix;
@@ -21,10 +21,10 @@ import junit.framework.TestCase;
 public class RestaurantDaoTest extends TestCase {
 
 	@Inject
-	private RestaurantDao restaurantDao;
+	private RestaurantCorrectionDao restaurantDao;
 
 	@Inject
-	private RestaurantTypeDao restaurantTypeDao;
+	private RestaurantTypeCorrectionDao restaurantTypeDao;
 
 	@Test
 	public void testSaveAndFindById() throws Exception {
@@ -97,11 +97,11 @@ public class RestaurantDaoTest extends TestCase {
 		Restaurant restaurant = new Restaurant();
 		restaurant.setRestaurantType(restaurantType);
 		restaurant = this.restaurantDao.merge(restaurant);
-
+		
 		Restaurant savedRestaurant = this.restaurantDao.findById(restaurant.getId());
 
 		Assert.assertNotNull(savedRestaurant.getRestaurantType());
-		Assert.assertEquals(savedRestaurant.getRestaurantType().getName(), restaurantType.getName());
+		Assert.assertEquals(restaurantType.getName(), savedRestaurant.getRestaurantType().getName());
 	}
 
 }

@@ -1,13 +1,16 @@
 package com.bigcorp.app.correction.dao;
 
+import java.util.List;
+
 import com.bigcorp.app.correction.model.RestaurantType;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
 @Stateless
-public class RestaurantTypeDao {
+public class RestaurantTypeCorrectionDao {
 
 	@PersistenceContext
 	protected EntityManager entityManager;
@@ -33,7 +36,13 @@ public class RestaurantTypeDao {
 		this.entityManager.remove(restaurantType);
 	}
 
-	
-	
+	public List<RestaurantType> findWithRestaurants(Long id) {
+		TypedQuery<RestaurantType> query = this.entityManager.createQuery(
+				"select rt from RestaurantType rt  " +
+						" left join fetch rt.restaurants restaurant "
+						+ " where rt.id = :id", RestaurantType.class);
+		query.setParameter("id", id);
+		return query.getResultList();
+	}
 
 }

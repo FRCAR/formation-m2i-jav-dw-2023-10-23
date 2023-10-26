@@ -110,5 +110,12 @@ public class Restaurant {
 	public void setRestaurantType(RestaurantType restaurantType) {
 		this.restaurantType = restaurantType;
 	}
+	
+	public void associateWith(RestaurantType restaurantType) {
+		setRestaurantType(restaurantType);
+		if(this.restaurantType != null) {
+			this.restaurantType.getRestaurants().add(this);
+		}
+	}
 
 }

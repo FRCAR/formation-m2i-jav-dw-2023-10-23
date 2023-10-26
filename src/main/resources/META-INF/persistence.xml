@@ -18,9 +18,9 @@
 				/> <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:C:/dev/h2-data/sample" 
 				/> <property name="javax.persistence.jdbc.user" value="test" /> <property 
 				name="javax.persistence.jdbc.password" value="test" / -->
-			<property
+			<!--property
 				name="jakarta.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+				value="drop-and-create" /-->
 				
 			<!--property name="javax.persistence.schema-generation.create-source" 
 				value="metadata-then-script" / -->
